@@ -19,9 +19,9 @@
 <body onload="startGame()">
     <script>
 
-        var player;
-        var up;
-        var right;
+        var player
+        var up = 0;
+        var right = 0;
 
         function startGame() {
             background.start();
@@ -66,24 +66,25 @@
             }
         }
 
-        //function updatePlayer() {
-        //    player.y += 2*up
-        //    player.x += 2*right
-        //    playerLayer.clear();
-        //    player.update();
-        //}
+        function updatePlayer() {
+            player.y += 2*up
+            player.x += 2*right
+            console.log(player.y);
+            playerLayer.clear();
+            player.update();
+        }
 
-    /*window.addEventListener("keydown", function (event) {
+    window.addEventListener("keydown", function (event) {
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
         }
 
         switch (event.key) {
             case "w":
-            up = 1;
+            up = -1;
             break;
             case "s":
-            up = -1;
+            up = 1;
             break;
             case "a":
             right = -1;
@@ -100,7 +101,7 @@
 
         // Cancel the default action to avoid it being handled twice
         event.preventDefault();
-    }, true);*/
+    }, true);
     </script>
 
     </body>
