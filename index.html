@@ -3,13 +3,22 @@
 <head>
     <title>Super Silly Jump</title>
     <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/711747642958282782/1101495389779144724/smilenormalsonormalsmile.jpg?width=562&height=702"/>
+    <style>
+        body{
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="canv1" width="1920" height="975"></canvas>
 
+    <canvas id="bkgCanvas" width="1920" height="975" style="position: absolute; left: 0px; top: 0px;"></canvas>
+    
+    <script>
+    var canvas = document.getElementById("bkgCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#76a1f1";s
+    ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight);
+    </script>
 
-</body>
-<script>
-
-</script>
+    </body>
 </html>
