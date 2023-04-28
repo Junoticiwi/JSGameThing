@@ -2,14 +2,35 @@
 <html>
 <head>
     <title>Super Silly Jump</title>
-    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/711747642958282782/1101495389779144724/smilenormalsonormalsmile.jpg?width=562&height=702"/>
+    <link rel="icon" type="image/png" href="smilenormalsonormalsmile.jpg"/>
+    <style>
+        body{
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="canv1" width="1920" height="975"></canvas>
 
+    <canvas id="backSky" width="1920" height="975" style="z-index: 1; position: absolute; left: 0px; top: 0px;"></canvas>
+    <canvas id="player" width="1920" height="975" style="z-index: 2; position: absolute; left: 0px; top: 0px;"></canvas>
+    
+    <script>
+    var sky = document.getElementById("backSky");
+    var ctxSky = sky.getContext("2d");
+    var player = document.getElementById("player");
+    var ctxPlayer = player.getContext("2d");
 
-</body>
-<script>
+    ctxSky.fillStyle = "#0cFF0c";
+    ctxSky.fillRect(0,0,1920,1080);
+    ctxPlayer.fillStyle = "#FFFFFF";
+    ctxPlayer.fillRect(0,200,100,200);
 
-</script>
+    document.addEventListener('keydown', function(event){
+        if(event.key == 'W') {
+            ctxPlayer.fillRect(0,100,100,200);
+        }
+    })
+    </script>
+
+    </body>
 </html>
